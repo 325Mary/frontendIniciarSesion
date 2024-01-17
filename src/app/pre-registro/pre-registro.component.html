@@ -1,0 +1,60 @@
+<div class="container">
+  <ul class="nav nav-tabs" id="myTabs">
+    <li class="nav-item">
+      <a class="nav-link" (click)="cambiarPestana('iniciarSesion')" 
+         [class.active]="pestanaActual === 'iniciarSesion'">Iniciar Sesión</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="cambiarPestana('registrarse')" 
+         [class.active]="pestanaActual === 'registrarse'">Registrarse</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade" id="iniciarSesion" 
+         [class.show]="pestanaActual === 'iniciarSesion'" 
+         [class.active]="pestanaActual === 'iniciarSesion'">
+
+         <div class="card text-center" style="width: 300px; margin: 20px auto;">
+          <div class="card-body">
+        
+            <form (ngSubmit)="onSubmit()">
+            
+            <div class="mb-3"> 
+              <label>Email</label>
+              
+            </div> 
+            <div class="mb-3">
+              <label>Usuario</label>
+              <input type="text" class="form-control" [(ngModel)]="user.email" name="email">
+              <label>Password</label>
+
+              <input type="password" class="form-control" [(ngModel)]="user.password" name="password">
+            </div>
+            <div *ngIf="mensajeError" class="alert alert-danger">
+              {{ mensajeError }}
+            </div>
+            <input type="submit" value="Ingresar" class="btn btn-info">
+          </form>
+          </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="tab-pane fade" id="registrarse" 
+         [class.show]="pestanaActual === 'registrarse'" 
+         [class.active]="pestanaActual === 'registrarse'">
+        <h2 class="text-center">¿Como deseas registrarse?</h2>
+        <br>
+        <div class="d-flex justify-content-center" style="padding-top: 100px;">
+        <select   [(ngModel)]="rutaSeleccionada" (change)="navegar()">
+          <option value="registroEmpresa"> Empresa</option>
+          <option value="registroEmpleado">Empleado </option>
+        </select>
+      </div>
+        
+    </div>
+  </div>
+</div>
