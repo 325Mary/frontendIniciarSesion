@@ -1,1 +1,31 @@
-<p>registro-empleado works!</p>
+<div class="d-flex justify-content-center mt-4">
+    <form (ngSubmit)="registerUser()">        <div class="mb-3">
+        <label for="nameCompany" class="form-label">Nombre:</label>
+        <input type="text"  [(ngModel)]="User.name"class="form-control" id="nameCompany" name="nameCompany" placeholder="Nombres y apellidos" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email"   [(ngModel)]="User.email"class="form-control" id="email" name="email" placeholder="correo electronico" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="telephone" class="form-label">Telefono:</label>
+        <input type="text"  [(ngModel)]="User.telephone" class="form-control" id="telephone" name="telephone" placeholder="Telefono de contacto" required>
+      </div>
+  
+  
+      <div class="mb-3">
+        <label for="direction" class="form-label">Direccion:</label>
+        <input type="text" [(ngModel)]="User.direction"  class="form-control" id="direction" name="direction" placeholder="direccion de residencia" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="tenantId" class="form-label">empresa:</label>
+        <input type="text"  [(ngModel)]="User.tenantId" class="form-control" id="tenantId" name="tenantId" ngModel required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" >Enviar</button>
+    </form>
+  </div>
+  

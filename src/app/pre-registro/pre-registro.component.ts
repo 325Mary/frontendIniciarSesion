@@ -37,7 +37,6 @@ rutaSeleccionada: any;
         } else {
           this.mensajeError = '';
           console.log('Inicio de sesión exitoso:', response);
-          // Aquí puedes incluir la lógica para manejar un inicio de sesión exitoso
         }
       },
       httpError => {

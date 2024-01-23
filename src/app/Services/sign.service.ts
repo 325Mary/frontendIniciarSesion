@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { Company } from "../models/empresa";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,10 @@ export class SignService {
   }
 
 
-  sendEmail(form: any) {
-    return this.httpClient.post(this.baseUrl, form);
-}
+  createCompany(formValue: any): Observable<Company> {
+    const url = `${this.baseUrl}/sendCompany`;
+    return this.httpClient.post<any>(url, formValue, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
+  }
 }

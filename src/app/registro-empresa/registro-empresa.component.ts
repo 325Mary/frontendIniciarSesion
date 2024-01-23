@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { SignService } from "../Services/sign.service";
+import { Company } from "../models/empresa";
+import { response } from 'express';
+import { error } from 'console';
+
 
 @Component({
   selector: 'app-registro-empresa',
@@ -8,24 +11,24 @@ import { SignService } from "../Services/sign.service";
   styleUrl: './registro-empresa.component.scss'
 })
 export class RegistroEmpresaComponent {
+  // company: Company = new Company ('', '', '', '', '', '');
+company = {
+  nameCompany: '',
+    telephone: '',
+    tenantId:'',
+    email: '',
+    direction:'',
+    pdfRunt: '' 
+}
+  constructor(private companyService: SignService) { }
 
-  empresaForm: any;
-  emailService: any;
 
-  constructor(private userService: SignService) { }
-
-  onSubmit(form: NgForm) {
-    if (form.valid) {
-      this.userService.sendEmail(form.value).subscribe(
-        (        response: any) => {
-          console.log('Datos enviados con éxito', response);
-        },
-        (        error: any) => {
-          console.error('Error al enviar datos', error);
-        }
-      );
-    }
+  send(){
+    this.companyService.createCompany(this.company).subscribe(
+      response=> console.log('Datos enviados', response),
+      error =>console.log('Error al enviar Datos', error)
+      
+      
+    )
   }
-  
-  
 }
