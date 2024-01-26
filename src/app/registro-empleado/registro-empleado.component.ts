@@ -1,33 +1,38 @@
 import { Component } from '@angular/core';
-import { SignService } from '../Services/sign.service'; // Ajusta la ruta según sea necesario
-
+import { SignService } from "../Services/sign.service";
 @Component({
   selector: 'app-registro-empleado',
   templateUrl: './registro-empleado.component.html',
-  styleUrls: ['./registro-empleado.component.scss']
+  styleUrl: './registro-empleado.component.scss'
 })
 export class RegistroEmpleadoComponent {
-
+  selectedNit: string = '';
+  nits = ['12345', '67890', '54321']; // Suponiendo que tienes una lista de Nits
   User = {
-    name: '',
+    username: '',
     telephone: '',
-    tenantId: '',
     email: '',
-    direction: '',
-  };
-
-  constructor(private signService: SignService) {}
-
-  registerUser() {
-    this.signService.register(this.User).subscribe({
-      next: (response) => {
-        console.log('usuario registrada:', response);
-        // Maneja el registro exitoso
-      },
-      error: (error) => {
-        console.error('Fallo en el registro:', error);
-        // Maneja los errores
-      }
+    direction:'',
+    imgfirme: '' 
+}
+  
+    constructor(private UserService: SignService) { }
+    registrar() {
+      const User = {
+        username: '',
+        telephone: '',
+        email: '',
+        direction:'',
+        imgfirme: '' 
+    }
+    this.UserService.registrarUsuario(User).subscribe(response => {
+      console.log('Usuario registrado:', response);
+    }, error => {
+      console.error('Error al registrar:', error);
     });
   }
-  }
+  
+  
+      
+      
+    }

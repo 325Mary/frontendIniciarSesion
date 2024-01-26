@@ -15,14 +15,8 @@ export class SignService {
     this.baseUrl = "http://127.0.0.1:3200";
   }
 
-  register(formValue: any) {
-    const formData = new FormData();
-    Object.keys(formValue).forEach(key => {
-      formData.append(key, formValue[key]);
-    });
-
-    const url = `${this.baseUrl}/registrar`;
-    return this.httpClient.post<any>(url, formData);
+  registrarUsuario(User: any): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/register`, User);
   }
 
   login(formValue: any) {

@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../registro-empresa/formularioEmpresa.jpg");
+    background-repeat: no- repeat;
+    background-size: cover;
+    background-position: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // min-height: 100vh;
+
+}
+
+.form-content {
+    background-color: rgb(221, 227, 232);
+    background-position: center;
+    background-repeat: no- repeat;
+    background-size: cover;
+    padding: 50px;
+    width: 600px;
+    border-radius: 15px;
+    margin-left: 440px;
+}
+
+
+
+label{
+    font-size: 17px;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 8px;
+    background-color: #709dea;
+    font-size: 16px;
+    color: #dfe1e5;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #1e2db5;
+}
+
+@media(max-width: 991px){
+    body{
+        padding: 30px;
+    }
+
+    .form-content{
+        width: 100%;
+    }
+
+    form{
+        width: 100%;
+    }
+}

@@ -1,36 +1,44 @@
-<div class="d-flex justify-content-center mt-4">
+<body>
+  <div class="d-flex justify-content-center align-items-center">
+   <h2> Datos de Solicitud de Usuario</h2>
+</div>
+<div class="d-flex justify-content-center mt-4 form-content" >
   <form (ngSubmit)="send()">
     <div class="mb-3">
       <label for="nameCompany" class="form-label">Nombre:</label>
-      <input type="text"  [(ngModel)]="company.nameCompany"class="form-control" id="nameCompany" name="nameCompany" required>
+      <input type="text"  [(ngModel)]="company.nameCompany"class="form-control" id="nameCompany" name="nameCompany"  placeholder="Nombre de empresa" required>
     </div>
 
     <div class="mb-3">
       <label for="email" class="form-label">Email:</label>
-      <input type="email"   [(ngModel)]="company.email"class="form-control" id="email" name="email"  required>
+      <input type="email"   [(ngModel)]="company.email"class="form-control" id="email" name="email" placeholder="correo de la empresa" required>
     </div>
 
     <div class="mb-3">
       <label for="telephone" class="form-label">Telefono:</label>
-      <input type="text"  [(ngModel)]="company.telephone" class="form-control" id="telephone" name="telephone"  required>
+      <input type="text"  [(ngModel)]="company.telephone" class="form-control" id="telephone" name="telephone"  placeholder="Telefono de contacto" required>
     </div>
 
     <div class="mb-3">
       <label for="pdfRunt" class="form-label">Runt:</label>
-      <input type="file"  [(ngModel)]="company.pdfRunt" class="form-control" id="pdfRunt" name="pdfRunt"  required>
+      <input type="file"  [(ngModel)]="company.pdfRunt" class="form-control" id="pdfRunt" name="pdfRunt" placeholder="PDF del Runt" required>
     </div>
 
 
     <div class="mb-3">
       <label for="direction" class="form-label">Direccion:</label>
-      <input type="text" [(ngModel)]="company.direction"  class="form-control" id="direction" name="direction"  required>
+      <input type="text" [(ngModel)]="company.direction"  class="form-control" id="direction" name="direction" placeholder="Dirección de la empresa" required>
     </div>
 
     <div class="mb-3">
       <label for="tenantId" class="form-label">Nit:</label>
-      <input type="text"  [(ngModel)]="company.tenantId" class="form-control" id="tenantId" name="tenantId" ngModel required>
+      <input type="text"  [(ngModel)]="company.tenantId" class="form-control" id="tenantId" name="tenantId" placeholder="Nit de la empresa" required>
     </div>
 
-    <button type="submit" class="btn btn-primary" >Enviar</button>
-  </form>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+    </form>
 </div>
+
+</body>
