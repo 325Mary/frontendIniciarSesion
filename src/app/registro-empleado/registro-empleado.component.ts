@@ -6,8 +6,8 @@ import { SignService } from "../Services/sign.service";
   styleUrl: './registro-empleado.component.scss'
 })
 export class RegistroEmpleadoComponent {
-  selectedNit: string = '';
-  nits = ['12345', '67890', '54321']; // Suponiendo que tienes una lista de Nits
+  selectedCompanys: string = '';
+  companys: any =[];
   User = {
     username: '',
     telephone: '',
@@ -32,6 +32,20 @@ export class RegistroEmpleadoComponent {
     });
   }
   
+  ngOnInit(): void {
+    this.listCompanys();
+  }
+
+  listCompanys(): void {
+    this.UserService.listCompanys().subscribe(
+      (data) => {
+        this.companys = data;
+      },
+      (error) => {
+        console.error('Error al obtener empresas', error);
+      }
+    );
+  }
   
       
       

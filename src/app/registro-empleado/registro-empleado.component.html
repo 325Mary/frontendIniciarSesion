@@ -8,13 +8,13 @@
        
       <div class="custom-select-large">
         <label for="tenantId" class="form-label ">Empresas regisradas</label>
-        <select [(ngModel)]="selectedNit" class="form-control" id="tenantId" name="tenantId" required>
+        <select [(ngModel)]="selectedCompanys" class="form-control" id="companys" name="companys" required>
           <option value="">Seleccione la empresa</option>
-          <option *ngFor="let nit of nits" [value]="nit">{{nit}}</option>
+          <option *ngFor="let companys of companys" [value]="companys">{{companys.nameCompany}}</option>
         </select>
       </div>
 
-      <div *ngIf="selectedNit">
+      <div *ngIf="selectedCompanys">
 
       <div class="mb-3">
         <label for="nameUser" class="form-label">Nombre:</label>

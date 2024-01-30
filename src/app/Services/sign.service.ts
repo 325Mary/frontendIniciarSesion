@@ -31,4 +31,10 @@ export class SignService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     });
   }
+
+  listCompanys(): Observable<any[]> {
+    const url = `${this.baseUrl}/getAllCompanies`;
+
+    return this.httpClient.get<any[]>(url);
+  }
 }

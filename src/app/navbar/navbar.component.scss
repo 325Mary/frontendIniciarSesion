@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #063395;
+    padding: 10px;
+    border-bottom: 3px solid #2980b9;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+/* Alinear elementos a la derecha */
+.navbar a.right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar a.right .icono {
+    width: 20px; /* Ajusta el tamaño según tus necesidades */
+    height: 20px; /* Ajusta el tamaño según tus necesidades */
+    margin-right: 5px; /* Espaciado entre la imagen y el texto */
+}
+/* Estilo adicional para el último elemento si es necesario */
+.navbar a.right:last-child {
+    margin-right: 10px; /* Agrega un margen derecho para separar del borde */
+}
+
+.contenedor-img{
+    width: 180px;
+    height: auto;
+    overflow: hidden;    
+}
+.contenedor-img a img{
+    width: 100%;
+    height: auto;
+}
