@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './index.component.scss'
 })
 export class IndexComponent {
-
+  
 }

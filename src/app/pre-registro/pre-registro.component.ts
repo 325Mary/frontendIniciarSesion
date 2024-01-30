@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SignService } from "../Services/sign.service";
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-pre-registro',
   templateUrl: './pre-registro.component.html',
@@ -10,21 +9,22 @@ import { Router } from '@angular/router';
 })
 export class PreRegistroComponent implements OnInit {
 
-  
   pestanaActual: string = 'valorInicial'; 
   user = {
     email: '',
     password: ''
   };
   mensajeError: string = '';
-rutaSeleccionada: any;
+  rutaSeleccionada: any;
 
   constructor(private userService: SignService, private router: Router) { }
  
   ngOnInit(): void {
-    const pestanaGuardada = localStorage.getItem('pestanaActual');
-    if (pestanaGuardada) {
-      this.pestanaActual = pestanaGuardada;
+    if (typeof localStorage !== 'undefined') {
+      const pestanaGuardada = localStorage.getItem('pestanaActual');
+      if (pestanaGuardada) {
+        this.pestanaActual = pestanaGuardada;
+      }
     }
   }
 
@@ -37,8 +37,8 @@ rutaSeleccionada: any;
         } else {
           this.mensajeError = '';
           console.log('Inicio de sesión exitoso:', response);
-          this.router.navigate(['home'])
-                }
+          this.router.navigate(['home']);
+        }
       },
       httpError => {
         this.mensajeError = 'Error al iniciar sesión';
@@ -49,7 +49,9 @@ rutaSeleccionada: any;
 
   cambiarPestana(pestana: string): void {
     this.pestanaActual = pestana;
-    localStorage.setItem('pestanaActual', pestana);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('pestanaActual', pestana);
+    }
   }
 
   navegar() {
@@ -57,5 +59,4 @@ rutaSeleccionada: any;
       this.router.navigate([this.rutaSeleccionada]);
     }
   }
-
 }
