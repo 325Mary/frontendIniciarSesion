@@ -5,12 +5,13 @@ section{
 }
 
 
-section img:hover{
+section img:hover {
     cursor: context-menu;
     width: 300px;
-    opacity: 4;
+    opacity: 0.4; /* Corregido el valor de la opacidad */
     filter: contrast(120%);
 }
+
 
 img {
     width: 100%; 
@@ -33,8 +34,8 @@ img {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
     transition: opacity 0.3s ease-in-out;
+    z-index: 1001;
 }
 .carousel-caption h3{
     font-size: 3rem;

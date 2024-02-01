@@ -1,9 +1,15 @@
 <nav class="navbar">
-    <div class="contenedor-img">
-        <a href="#"><img src="../../assets/logo_little_box.png" alt=""></a>  
+    <div class="menu-container" [ngClass]="{'menu-open': isMenuOpen}">
+      <app-sidebar></app-sidebar>
     </div>
-<a  routerLink="/SignIn/Up/" routerLinkActive="active-link"  class="right"> 
-    SignIn/Up
-    <img src="../../assets/bx-user-circle.svg" alt="Icono" class="icono"> 
-     </a>
-</nav>
+    <div class="contenedor-img">
+      <a (click)="toggleMenu()">
+        <img src="../../assets/logo_little_box.png" alt="">
+      </a>
+    </div>
+    <a routerLink="/SignIn/Up/" routerLinkActive="active-link" class="right">
+      SignIn/Up
+      <img src="../../assets/bx-user-circle.svg" alt="Icono" class="icono">
+    </a>
+  </nav>
+  

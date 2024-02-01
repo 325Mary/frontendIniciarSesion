@@ -1,0 +1,30 @@
+<!-- employees.component.html -->
+<div class="table-container" *ngIf="employees$ | async as employees">
+    <div class="table-scroll-container">
+      <table class="smaller-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo Electrónico</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.email }}</td>
+            <td>
+              <button class="assign-button" (click)="assignRoles(employee._id)">Asignar Rol</button>
+              <span *ngIf="selectedEmployeeId === employee._id">
+                <select [(ngModel)]="selectedRoleId" name="roles">
+                  <option *ngFor="let role of roles" [value]="role._id">{{ role.nameRol }}</option>
+                </select>
+                <button (click)="updateRoles()">Actualizar</button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

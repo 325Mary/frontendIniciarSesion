@@ -1,0 +1,68 @@
+/* employees.component.css */
+
+/* Contenedor principal para centrar la tabla */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos del contenedor de la tabla */
+.table-scroll-container {
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+    max-height: 80vh; /* Ajusta la altura máxima del contenedor, puedes cambiar según tus necesidades */
+    width: 90%; /* Ajusta el ancho del contenedor de la tabla */
+    margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}
+
+/* Estilos de la tabla */
+.smaller-table {
+    width: 100%; /* Ancho de la tabla al 100% del contenedor */
+    font-size: 16px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Espacio entre las celdas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la tabla */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border: none; /* Elimina los bordes de las celdas */
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Estilo de los botones en la columna de acciones */
+.assign-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.assign-button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos de la barra de desplazamiento */
+.table-scroll-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 10px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

@@ -3,12 +3,11 @@
      <h2> Registro de Usuario</h2>
   </div>
   <div class="d-flex justify-content-center mt-4 form-content" >
-    <form (ngSubmit)="registrar()" #form="ngForm">
-
+    <form (ngSubmit)="registrar()" #form="ngForm" enctype="multipart/form-data">
        
       <div class="custom-select-large">
         <label for="tenantId" class="form-label ">Empresas regisradas</label>
-        <select [(ngModel)]="selectedCompanys" class="form-control" id="companys" name="companys" required>
+        <select [(ngModel)]="selectedCompanys" class="form-control" id="tenantId" name="tenantId" required>
           <option value="">Seleccione la empresa</option>
           <option *ngFor="let companys of companys" [value]="companys">{{companys.nameCompany}}</option>
         </select>
@@ -17,8 +16,8 @@
       <div *ngIf="selectedCompanys">
 
       <div class="mb-3">
-        <label for="nameUser" class="form-label">Nombre:</label>
-        <input type="text"  [(ngModel)]="User.username"class="form-control" id="nameUser" name="nameUser"  placeholder="Nombres y apellidos" required>
+        <label for="username" class="form-label">Nombre:</label>
+        <input type="text"  [(ngModel)]="User.username"class="form-control" id="username" name="username"  placeholder="Nombres y apellidos" required>
       </div>
   
       <div class="mb-3">
@@ -30,12 +29,15 @@
         <label for="telephone" class="form-label">Telefono:</label>
         <input type="text"  [(ngModel)]="User.telephone" class="form-control" id="telephone" name="telephone"  placeholder="Telefono de contacto" required>
       </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password"  [(ngModel)]="User.password" class="form-control" id="password" name="password"  placeholder="Contraseña de usuario" required>
+      </div>
   
       <div class="mb-3">
         <label for="imgfirme" class="form-label">firma:</label>
-        <input type="file"  [(ngModel)]="User.imgfirme" class="form-control" id="imgfirme" name="imgfirme"  required>
+        <input type="file" (change)="handleFileInput($event)" class="form-control" id="imgfirme" name="imgfirme" required>
       </div>
-  
   
       <div class="mb-3">
         <label for="direction" class="form-label">Direccion:</label>

@@ -12,9 +12,11 @@ import {  PreRegistroComponent} from "./pre-registro/pre-registro.component";
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { RegistroEmpleadoComponent } from './registro-empleado/registro-empleado.component';
 import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { LayoutComponent } from './layout/layout.component';
 import { IndexComponent } from './index/index.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PersonalizationComponent } from './personalization/personalization.component';
 
 
 @NgModule({
@@ -25,9 +27,11 @@ import { IndexComponent } from './index/index.component';
     RegistroEmpresaComponent,
     RegistroEmpleadoComponent,
     HomeComponent,
-    FooterComponent,
-    LayoutComponent,
-    IndexComponent
+    IndexComponent,
+    SidebarComponent,
+    EmployeesComponent,
+    ChangePasswordComponent,
+    PersonalizationComponent
   ],
   imports: [
     BrowserModule,

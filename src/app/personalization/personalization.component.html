@@ -1,0 +1,28 @@
+<!-- user-customization.component.html -->
+<div class="container mt-4 custom-form">
+    <h2>Personalización de Usuario</h2>
+    <form (submit)="guardarCambios()">
+      <!-- Campos de información básica -->
+       
+      <button  class="btn btn-primary" a routerLink="/change-password/">Cambiar Contrseña</button>
+      
+  
+      <h3>Preferencias de Color</h3>
+      <div class="form-group">
+        <label for="colorFondo">Color de Fondo:</label>
+        <input type="color" id="colorFondo" class="color-picker" [(ngModel)]="usuario.colorFondo">
+      </div>
+  
+      <div class="form-group">
+        <label for="colorTexto">Color de Texto:</label>
+        <input type="color" id="colorTexto" class="color-picker" [(ngModel)]="usuario.colorTexto">
+      </div>
+  
+      <!-- Otros campos de personalización según sea necesario -->
+  
+      <!-- Botón para guardar cambios -->
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+  </div>
+  
+  <router-outlet></router-outlet>

@@ -1,22 +1,26 @@
 body, html {
-    margin: 0;
-    padding: 0; 
-    background-image: url('../../assets/img1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* Agregado */
-    align-items: center; /* Agregado */
+  margin: 0;
+  padding: 0;
+  background-image: url('../../assets/img1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
 }
 
-p {
-  color: rgb(18, 17, 17);
-  font-size: 18px;
+.overlay {
   position: absolute;
-  top: 40%;
-  left: 40%;
-  transform: translate(-40%, -40%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
+
