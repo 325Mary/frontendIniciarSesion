@@ -1,4 +1,6 @@
-import { Component, HostListener  } from '@angular/core';
+import { Component, HostListener,   ViewChild, ElementRef } from '@angular/core';
+import { SignService } from "../Services/sign.service";
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +8,29 @@ import { Component, HostListener  } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  modalOpen = false;
   isMenuOpen = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.closeModal();
+      }
+    });
+  }
+  
+  
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalOpen = false;
+  }
+  
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -19,4 +42,7 @@ export class NavbarComponent {
       this.isMenuOpen = false;
     }
   }
+
+
+  
 }

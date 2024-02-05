@@ -1,15 +1,23 @@
-<nav class="navbar">
-    <div class="menu-container" [ngClass]="{'menu-open': isMenuOpen}">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="contenedor-img">
-      <a (click)="toggleMenu()">
-        <img src="../../assets/logo_little_box.png" alt="">
-      </a>
-    </div>
-    <a routerLink="/SignIn/Up/" routerLinkActive="active-link" class="right">
-      SignIn/Up
-      <img src="../../assets/bx-user-circle.svg" alt="Icono" class="icono">
-    </a>
-  </nav>
+
+<div class="navbar">
   
+  <div class="menu-container" [ngClass]="{'menu-open': isMenuOpen}">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="contenedor-img">
+    <a (click)="toggleMenu()">
+      <img src="../../assets/logo_little_box.png" alt="">
+    </a>
+  </div>
+  <a href="#" (click)="openModal()" class="right">SignIn/Up</a>
+  <img src="../../assets/bx-user-circle.svg" alt="Icono" class="icono"> 
+
+  
+  <div class="modal" [class.active]="modalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <app-pre-registro></app-pre-registro>
+    </div>
+  </div>
+
+</div>

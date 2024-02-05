@@ -17,6 +17,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PersonalizationComponent } from './personalization/personalization.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PersonalizationComponent } from './personalization/personalization.comp
     SidebarComponent,
     EmployeesComponent,
     ChangePasswordComponent,
-    PersonalizationComponent
+    PersonalizationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

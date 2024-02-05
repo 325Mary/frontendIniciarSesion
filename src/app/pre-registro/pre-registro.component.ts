@@ -59,4 +59,7 @@ export class PreRegistroComponent implements OnInit {
       this.router.navigate([this.rutaSeleccionada]);
     }
   }
+
+ 
+  
 }

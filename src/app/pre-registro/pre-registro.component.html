@@ -48,12 +48,13 @@
          [class.active]="pestanaActual === 'registrarse'">
         <h2 class="text-center">¿Como deseas registrarse?</h2>
         <br>
-        <div class="d-flex justify-content-center" style="padding-top: 100px;">
-        <select   [(ngModel)]="rutaSeleccionada" (change)="navegar()">
-          <option value="registroEmpresa"> Empresa</option>
-          <option value="registroEmpleado">Empleado </option>
-        </select>
+        <div class="d-flex justify-content-center" style="padding-top: 60px;">
+          <button class="btn btn-primary" a routerLink="/registroEmpresa/">Empresa</button>
       </div>
+      <div class="d-flex justify-content-center" style="padding-top: 80px;">
+        <button class="btn btn-primary" a routerLink="/registroEmpleado/"> Empleado</button>
+      </div>
+        
         
     </div>
   </div>

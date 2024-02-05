@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders , HttpResponse } from '@angular/common/http';
 import { Company } from "../models/empresa";
-import { Observable } from 'rxjs';
+import { Observable, Subject  } from 'rxjs';
 
 
 @Injectable({
@@ -61,5 +61,8 @@ changePassword(currentPassword: string, newPassword: string): Observable<HttpRes
   const data = { currentPassword, newPassword };
   return this.httpClient.post(`${this.baseUrl}/change-password`, data, { observe: 'response' });
 }
+
+
+
 
 }
